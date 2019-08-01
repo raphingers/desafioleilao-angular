@@ -1,0 +1,10 @@
+<nav *ngIf="hasToken()">
+  <div class="nav-wrapper">
+    <a routerLink="" class="brand-logo">Desafio - Leilões</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a routerLink="/leilao" routerLinkActive="active">Leilões</a></li>
+        <!-->li><a routerLink="/User" routerLinkActive="active">Usuario</a></li-->
+        <li><a routerLink="/login" routerLinkActive="active" (click)="logout()" style="cursor: pointer;">Logout</a></li>
+    </ul>
+  </div>
+</nav>

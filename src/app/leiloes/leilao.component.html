@@ -1,0 +1,40 @@
+<table>
+  <thead>
+  <tr>
+    <th data-field="name">Nome Leilão</th>
+    <th data-field="name">Responsável</th>
+    <th data-field="name">Novo</th>
+    <th data-field="name">Valor Inicial</th>
+    <th data-field="name">Valor Final</th>
+    <th data-field="name">Finalizado</th>
+  </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let leilao of leiloes">
+      <td>{{ leilao.Nome }}</td>
+      <td>{{ leilao.Responsavel }}</td>
+      <td>{{ leilao.Novo }}</td>
+      <td>{{ leilao.ValorInicial }}</td>
+      <td>{{ leilao.ValorFinal  }}</td>
+      <td>{{ leilao.Finalizado  }}</td>
+      <td>
+        <a [routerLink]="['/leilao', leilao._id]">
+          <i class="material-icons">mode_edit</i>
+        </a>
+      </td>
+      <td>
+        <a (click)="deleteLeilao(leilao)" style="cursor: pointer;">
+          <i class="material-icons">delete</i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+  <a class="btn-floating btn-large waves-effect waves-light green"
+     routerLink="/leilao/new">
+    <i class="material-icons">add</i>
+  </a>
+</div>

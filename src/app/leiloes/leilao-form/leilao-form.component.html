@@ -1,0 +1,96 @@
+<h5>{{ title }}</h5>
+<div class="row">
+  <form materialize class="col s12" [formGroup]="form" (ngSubmit)="save()">
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">gavel</i>
+        <input id="Nome" type="text" class="validate"
+               formControlName="Nome" 
+               [class.invalid]="form.controls['Nome'].touched && !form.controls['Nome'].valid"
+        >
+        <label for="Nome"
+               [class.active]="leilao.Nome"
+               data-error="Campo obrigatório.">
+          Nome
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">assignment_ind</i>
+        <input id="Responsavel" type="text" class="validate"
+               formControlName="Responsavel"
+               [class.invalid]="form.controls['Responsavel'].touched && !form.controls['Responsavel'].valid"
+        >
+        <label for="Responsavel"
+               [class.active]="leilao.Responsavel"
+               data-error="Campo obrigatório.">
+          Responsável
+        </label>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="input-field col s6">
+        <i class="material-icons prefix">monetization_on</i>
+        <input id="ValorInicial" type="text" class="validate"
+               formControlName="ValorInicial"
+               [class.invalid]="form.controls['ValorInicial'].touched && !form.controls['ValorInicial'].valid"
+        >
+        <label for="ValorInicial"
+               [class.active]="leilao.ValorInicial"
+               data-error="Campo obrigatório.">
+               Valor Inicial
+        </label>
+      </div>
+      <div class="input-field col s6">
+        <i class="material-icons prefix">monetization_on</i>
+        <input id="ValorFinal" type="text" class="validate"
+               formControlName="ValorFinal"
+               [class.invalid]="form.controls['ValorFinal'].touched && !form.controls['ValorFinal'].valid"
+        >
+        <label for="ValorFinal"
+               [class.active]="leilao.ValorFinal"
+               data-error="Campo obrigatório.">
+               Valor Final
+        </label>
+      </div>
+    </div>
+
+
+
+    <div class="row">
+      <div class="input-field col s6">
+        <i class="material-icons prefix">star_border</i>
+        <input id="Novo" type="text" class="validate"
+               formControlName="Novo"
+               [class.invalid]="form.controls['Novo'].touched && !form.controls['Novo'].valid"
+        >
+        <label for="Novo"
+               [class.active]="leilao.Novo"
+               data-error="Campo obrigatório.">
+               Novo
+        </label>
+      </div>
+      <div class="input-field col s6">
+        <i class="material-icons prefix">done_all</i>
+        <input id="Finalizado" type="text" class="validate"
+               formControlName="Finalizado"
+               [class.invalid]="form.controls['Finalizado'].touched && !form.controls['Finalizado'].valid"
+        >
+
+        <label for="Finalizado"
+               [class.active]="leilao.Finalizado"
+               data-error="Campo obrigatório.">
+               Finalizado
+        </label>
+      </div>
+    </div>
+ 
+    <button class="btn waves-effect waves-light" type="submit"
+            [disabled]="!form.valid">
+      Submit<i class="material-icons right">done</i>
+    </button>
+  </form>
+</div>
